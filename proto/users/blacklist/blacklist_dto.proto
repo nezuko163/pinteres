@@ -1,0 +1,44 @@
+syntax = "proto3";
+
+package blacklist;
+
+
+message GetBlackListRequest {
+  string user_id = 1;
+  int32 page_size = 2;
+  int32 page_number = 3;
+}
+
+// Один элемент черного списка
+message BlackListItem {
+  string blocked_user_id = 1;
+  int64 blocked_at = 2; // timestamp (epoch millis)
+}
+
+// Ответ с пагинацией
+message GetBlackListResponse {
+  string user_id = 1;
+  repeated BlackListItem items = 2;
+  int32 total_count = 3;
+}
+
+// Запрос на блокировку пользователя
+message BlockUserRequest {
+  string user_id = 1;
+  string black_user_id = 2;
+}
+
+// Ответ на блокировку/разблокировку
+message BlockUserResponse {
+  bool success = 1;
+}
+
+// Запрос на разблокировку
+message UnblockUserRequest {
+  string user_id = 1;
+  string black_user_id = 2;
+}
+
+message UnblockUserResponse {
+  bool success = 1;
+}

@@ -1,0 +1,16 @@
+databaseChangeLog:
+  - changeSet:
+      id:  posts-1
+      author:  nezuko163
+      changes:
+        - sqlFile:
+            relativeToChangelogFile: true
+            path: sql/init.sql
+
+  - changeSet:
+      id:  posts-2
+      author:  nezuko163
+      changes:
+        - sqlFile:
+            relativeToChangelogFile: true
+            path: sql/tables/create_posts_table.sql

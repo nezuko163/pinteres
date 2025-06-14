@@ -1,0 +1,60 @@
+syntax = "proto3";
+
+package post;
+
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/wrappers.proto";
+import "posts-domain.proto";
+
+message StringList {
+  repeated string list = 1;
+}
+
+message CreatePostRequest {
+  string author_id = 1;
+  string content = 2;
+  repeated string tags = 3;
+  google.protobuf.Timestamp posted_at = 4;
+}
+
+message UpdatePostRequest {
+  string id = 1;
+  optional string content = 2;
+  optional StringList tags = 3;
+  optional google.protobuf.Timestamp posted_at = 4;
+}
+
+
+
+message GetPostRequest {
+  string id = 1;
+}
+
+
+message DeletePostRequest {
+  string id = 1;
+}
+
+message ListPostsResponse {
+  repeated Post posts = 1;
+}
+
+message GetPostsByTagsRequest {
+  repeated string tags = 1;
+  int32 pageNumber = 2;
+  int32 pageSize = 3;
+}
+
+message GetGetPostsIdsByRecommendationsRequest {
+  string userId = 1;
+  int32 pageNumber = 2;
+  int32 pageSize = 3;
+}
+
+message GetPostsByAuthorRequest {
+  string author_id = 1;
+  int32 pageNumber = 2;
+  int32 pageSize = 3;
+}
+

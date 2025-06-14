@@ -1,0 +1,29 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: auth
+
+  r2dbc:
+    url: r2dbc:postgresql://localhost:5432/auth
+    username: admin
+    password: 1234
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/auth
+    username: admin
+    password: 1234
+  liquibase:
+    change-log: classpath:/db/migration/db.changelog-master.yaml
+    enabled: true
+
+
+jwt:
+  secret: q3zA1vBNg2+3rTYHqXEgjZl7r9E9Lk+GLWlMB1JD5nU=
+  access-token-expiration: 36000000
+
+grpc:
+  server:
+    port: 9091
+

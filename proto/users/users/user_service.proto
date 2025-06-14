@@ -1,0 +1,14 @@
+syntax = "proto3";
+package user;
+
+
+import "users/user_dto.proto";
+import "users/user_domain.proto";
+
+service UserProfileService {
+  rpc CreateUserProfile(CreateUserProfileRequest) returns (UserProfile);
+  rpc UpdateUserProfile(UpdateUserProfileRequest) returns (UserProfile);
+  rpc DeleteUserProfile(DeleteUserProfileRequest) returns (DeleteUserProfileResponse);
+  rpc GetUserProfile(GetUserProfileRequest) returns (UserProfile);
+  rpc ListUserProfiles(ListUserProfilesRequest) returns (ListUserProfilesResponse);
+}

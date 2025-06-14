@@ -1,0 +1,25 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: posts
+
+  r2dbc:
+    url: r2dbc:postgresql://localhost:5433/posts
+    username: admin
+    password: 1234
+
+  datasource:
+    url: jdbc:postgresql://localhost:5433/posts
+    username: admin
+    password: 1234
+  liquibase:
+    change-log: classpath:/db/migration/db.changelog-master.yaml
+
+
+
+grpc:
+  server:
+    port: 9092
+

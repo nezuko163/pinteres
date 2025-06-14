@@ -1,0 +1,15 @@
+syntax = "proto3";
+import "google/protobuf/empty.proto";
+import "following/following_dto.proto";
+
+package followee;
+
+service FollowService {
+  rpc Follow(FollowRequest) returns (FollowResponse);
+  rpc Unfollow(FollowRequest) returns (FollowResponse);
+  rpc CheckFollow(FollowRequest) returns (CheckFollowResponse);
+  rpc GetFollowees(FolloweesRequest) returns (FolloweesResponse);
+  rpc GetSubscribers(SubscribersRequest) returns (SubscribersResponse);
+  rpc GetFolloweesCount(FolloweesCountRequest) returns (CountResponse);
+  rpc GetSubscribersCount(SubscribersCountRequest) returns (CountResponse);
+}

@@ -1,0 +1,24 @@
+syntax = "proto3";
+package user;
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/wrappers.proto";
+
+
+enum Gender {
+  UNSPECIFIED = 0;
+  MALE = 1;
+  FEMALE = 2;
+  OTHER = 3;
+}
+
+message UserProfile {
+  string id = 1;
+  string username = 2;
+  optional string avatar_id = 3;
+  optional string bio = 4;
+  optional string country = 5;
+  optional string birth_date = 6;
+  optional Gender gender = 7;
+  optional string language = 8;
+}

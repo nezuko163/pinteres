@@ -1,0 +1,31 @@
+databaseChangeLog:
+  - changeSet:
+      id: users-1
+      author: nezuko163
+      changes:
+        - sqlFile:
+            relativeToChangelogFile: true
+            path: sql/init.sql
+
+  - changeSet:
+      id: users-2
+      author: nezuko163
+      changes:
+        - sqlFile:
+            relativeToChangelogFile: true
+            path: sql/tables/create_user_table.sql
+
+  - changeSet:
+      id: users-3
+      author: nezuko163
+      changes:
+        - sqlFile:
+            relativeToChangelogFile: true
+            path: sql/tables/create_follows_table.sql
+  - changeSet:
+      id: users-4
+      author: nezuko163
+      changes:
+        - sqlFile:
+            relativeToChangelogFile: true
+            path: sql/tables/create_blacklist_table.sql

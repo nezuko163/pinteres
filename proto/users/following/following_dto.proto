@@ -1,0 +1,59 @@
+syntax = "proto3";
+
+package followee;
+
+message SubscribersCountRequest {
+  string user_id = 1;
+}
+
+message FolloweesCountRequest {
+  string user_id = 1;
+}
+
+message CountResponse {
+  string user_id = 1;
+  int32 count = 2;
+}
+
+message FollowRequest {
+  string subscriber_id = 1;  // UUID в строковом формате
+  string followee_id = 2;    // UUID в строковом формате
+}
+
+
+
+message FollowResponse {
+  bool success = 1;
+}
+
+message CheckFollowResponse {
+  bool is_following = 1;
+
+}
+
+message FolloweesRequest {
+  string me = 1;
+  int32 pageSize = 2;
+  int32 pageNumber = 3;
+}
+
+
+message FolloweesResponse {
+  string me = 1;
+  repeated string followees = 2;
+  int32 pageSize = 3;
+  int32 pageNumber = 4;
+}
+
+message SubscribersRequest {
+  string me = 1;
+  int32 pageSize = 2;
+  int32 pageNumber = 3;
+}
+
+message SubscribersResponse {
+  string me = 1;
+  repeated string subscribers = 2;
+  int32 pageSize = 3;
+  int32 pageNumber = 4;
+}

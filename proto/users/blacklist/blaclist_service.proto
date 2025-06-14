@@ -1,0 +1,10 @@
+syntax = "proto3";
+import "blacklist/blacklist_dto.proto";
+
+package blacklist;
+
+service BlackListService {
+  rpc GetBlackList(GetBlackListRequest) returns (GetBlackListResponse);
+  rpc BlockUser(BlockUserRequest) returns (BlockUserResponse);
+  rpc UnblockUser(UnblockUserRequest) returns (UnblockUserResponse);
+}

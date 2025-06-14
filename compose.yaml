@@ -1,0 +1,44 @@
+services:
+  db-auth:
+    image: 'postgres:17.4'
+    container_name: postgres_auth
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=1234
+      - POSTGRES_DB=auth
+    restart: always
+    ports:
+      - '5432:5432'
+
+  db-posts:
+    image: 'postgres:17.4'
+    container_name: postgres_posts
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=1234
+      - POSTGRES_DB=posts
+    restart: always
+    ports:
+      - '5433:5432'
+
+  db-reactions:
+    image: 'postgres:17.4'
+    container_name: postgres_reactions
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=1234
+      - POSTGRES_DB=reactions
+    restart: always
+    ports:
+      - '5434:5432'
+
+  db-users:
+    image: 'postgres:17.4'
+    container_name: postgres_users
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=1234
+      - POSTGRES_DB=users
+    restart: always
+    ports:
+      - '5435:5432'

@@ -1,0 +1,64 @@
+syntax = "proto3";
+package user;
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/wrappers.proto";
+import "users/user_domain.proto";
+
+
+// Create
+message CreateUserProfileRequest {
+  string username = 1;
+  optional string avatar_id = 2;
+  optional string bio = 3;
+  optional string country = 4;
+  optional string birth_date = 5;
+  optional Gender gender = 6;
+  optional string language = 7;
+}
+
+message CreateUserProfileResponse {
+  UserProfile profile = 1;
+}
+
+message UpdateUserProfileRequest {
+  string id = 1;
+  optional string username = 2;
+  optional string avatar_id = 3;
+  optional string bio = 4;
+  optional string country = 5;
+  optional string birth_date = 6;
+  optional Gender gender = 7;
+  optional string language = 8;
+}
+
+message UpdateUserProfileResponse {
+  UserProfile profile = 1;
+}
+
+// Delete
+message DeleteUserProfileRequest {
+  string id = 1;
+}
+
+message DeleteUserProfileResponse {
+  bool success = 1;
+}
+
+// Get
+message GetUserProfileRequest {
+  string id = 1;
+}
+
+message GetUserProfileResponse {
+  UserProfile profile = 1;
+}
+
+// List (if needed)
+message ListUserProfilesRequest {
+  repeated string ids = 1;
+}
+
+message ListUserProfilesResponse {
+  repeated UserProfile profiles = 1;
+}

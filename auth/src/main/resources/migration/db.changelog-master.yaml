@@ -1,0 +1,16 @@
+databaseChangeLog:
+  - changeSet:
+      id: auth-1
+      author: nezuko163
+      changes:
+        - sqlFile:
+            relativeToChangelogFile: true
+            path: sql/init.sql
+
+  - changeSet:
+      id:  auth-2
+      author:  nezuko163
+      changes:
+        - sqlFile:
+            relativeToChangelogFile: true
+            path: sql/tables/create_auth_users_table.sql

@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package post;
+
+import "google/protobuf/timestamp.proto";
+
+message Post {
+  string id = 1;
+  string author_id = 2;
+  string content = 3;
+  repeated string tags = 4;
+
+  google.protobuf.Timestamp posted_at = 5;
+  optional google.protobuf.Timestamp created_at = 6;
+  optional google.protobuf.Timestamp updated_at = 7;
+
+  PostStatus status = 8;
+}
+
+enum PostStatus {
+  POST_STATUS_UNSPECIFIED = 0;
+  SCHEDULED = 1;
+  PUBLISHED = 2;
+  ARCHIVED = 3;
+  UNDEFINED = 4;
+}
+
+
