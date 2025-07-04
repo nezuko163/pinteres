@@ -1,5 +1,8 @@
 # pinteres
 
+ **a*
+
+~a~
 
 ## auth
 `./gradlew :auth:update --no-configuration-cache` - auth update
